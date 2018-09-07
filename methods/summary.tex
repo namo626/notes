@@ -1,0 +1,74 @@
+\documentclass[11pt]{article}
+\usepackage{titlesec}
+\usepackage{geometry}[margin=0.5in]
+\usepackage{kpfonts, euler}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+
+\titleformat{\section}[frame]
+{\huge\bfseries}
+{\thesection}
+{1em}
+{}
+
+\titleformat{\subsection}
+{\Large\bfseries}
+{\thesubsection}
+{1em}
+{}[\titlerule]
+
+\titleformat{\subsubsection}
+{\bfseries\itshape}
+{}
+{0em}
+{}
+
+\title{Summary for Mathematical Methods in Physics}
+\author{Namo}
+
+\begin{document}
+\section{Infinite Series}
+\subsection{Convergence tests}
+These are the important convergence tests. Another useful one is the p-series test. BEFORE using these tests, filter out series whose terms do not tend to zero because they are obviously divergent. We will denote our sum as $\sum_{}^{\infty} a_n$ .
+
+\subsubsection{Comparison test}
+First find a series whose convergence is known. Then compare the current series to that.
+
+\subsubsection{Integral test}
+This is straightforward. Just integrate with the upper limit as infinity:
+$$\int_{}^{\infty} a_n \,dn \text{ is finite} \iff \sum_{}^{\infty} a_n \text{ converges} .$$
+
+\subsubsection{Ratio test}
+This is useful when the term contains factorial or power of $n$. Define $\rho$ as
+$$\rho = \left| \frac{a_{n+1}}{a_n} \right| .$$
+If $\lim_{n \to \infty} \rho$ is less than one, then the series converges; if more than 1, converges; if equals 1, the test is inconclusive.
+
+\subsubsection{Limit comparison test}
+This tells you if \textit{both} series converge or diverge. This is useful when the term is a rational number of polynomials. First find the comparison term $b_n$ by extracting the largest terms from the numerator and the denominator, then simplify the fraction.
+\\
+Then define
+$$c = \lim_{n \to \infty} \frac{a_n}{b_n} .$$
+If $0 < c < \infty$, then both converge or diverge. The convergence of the second series can be obtained through the p-series test.
+
+\subsection{Power Series}
+A power series is essentially a summation of different polynomial functions of $x$ that produces another function of $x$. It is of the form
+\begin{align}
+\sum_{n=0}^{\infty} a_n(x-a)^n &= a_0 + a_1(x-a) + a_2(x-a)^2 + a_3(x-a)^3 + ... \\
+                               &= f_1(x) + f_2(x) + f_3(x) + f_4(x) + ... \\
+                               &= S(x)
+\end{align}
+
+The coefficients depend on the incrementing $n$ while the $x$ terms have powers of $n$.
+\subsubsection{Radius of convergence}
+A power series converges differently from regular series. Since a power series is a function of $x$, there is a range of values of $x$ within which it converges. We also need to test both endpoints of the interval for convergence.
+\subsubsection{Properties of power series}
+\begin{itemize}
+\item A power series can be differentiated/integrated term by term.
+\item Two power series can be added, subtracted, or multiplied. This is simple when one of them is already a power series, e.g. $x^2$.
+\item One series can be substituted into another if the values of the substituted series are in the interval of convergence of the other.
+\item A function's power series expansion is unique.
+\end{itemize}
+\subsubsection{Applications}
+\section{Linear Algebra}
+
+\end{document}
